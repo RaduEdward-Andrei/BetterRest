@@ -13,6 +13,10 @@ struct ContentView: View {
     @State private var wakeUp = defaultWakeTime
     @State private var coffeeAmount = 0
     
+    @State private var model = try? SleepCalculator(
+        configuration: MLModelConfiguration()
+    )
+    
     private var idealBedtime: Date? {
         calculateBedTime()
     }
@@ -28,16 +32,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                VStack(alignment: .leading, spacing: 0){
-                    Text("When do you want to wake up?")
-                        .font(.headline)
-                    
-                        DatePicker(
-                            "Please enter a time",
-                            selection: $wakeUp,
-                            displayedComponents: .hourAndMinute
-                        )
-                        .labelsHidden()
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("When do you want to wake up?")
+                            .font(.headline)
+
+                        DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                    }
                 }
                 
                 Section("Desired amount of sleep") {
@@ -50,7 +52,7 @@ struct ContentView: View {
                 .font(.headline)
                 
                 Picker("Daily coffee intake", selection: $coffeeAmount) {
-                    ForEach(0..<20) { coffeeCups in
+                    ForEach(0..<21) { coffeeCups in
                         Text("^[\(coffeeCups) cup](inflect: true)")
                     }
                 }
@@ -71,29 +73,26 @@ struct ContentView: View {
     }
     
     func calculateBedTime() -> Date? {
-        do {
-            let config = MLModelConfiguration()
-            let model = try SleepCalculator(configuration: config)
-            
-            let components = Calendar.current.dateComponents(
-                [.hour, .minute],
-                from: wakeUp
-            )
-            let hour = (components.hour ?? 0) * 60 * 60
-            let minute = (components.minute ?? 0) * 60
-            
-            let prediction = try model.prediction(
-                wake: Double(hour + minute),
-                estimatedSleep: sleepAmount,
-                coffee: Double(coffeeAmount)
-            )
-            
-            let sleepTime = wakeUp - prediction.actualSleep
-            
-            return sleepTime
-        } catch {
+        guard let model else { return nil }
+        
+        let components = Calendar.current.dateComponents(
+            [.hour, .minute],
+            from: wakeUp
+        )
+        let hour = (components.hour ?? 0) * 60 * 60
+        let minute = (components.minute ?? 0) * 60
+        
+        guard let prediction = try? model.prediction(
+            wake: Double(hour + minute),
+            estimatedSleep: sleepAmount,
+            coffee: Double(coffeeAmount)
+        ) else {
             return nil
         }
+        
+        let sleepTime = wakeUp - prediction.actualSleep
+        
+        return sleepTime
     }
 }
 
