@@ -18,3 +18,7 @@ This project was built as part of the Hacking with Swift – SwiftUI course:
 https://www.hackingwithswift.com/books/ios-swiftui
 
 The implementation was written independently while following the course structure.
+
+## Screenshot
+
+![BetterRest Screenshot](Screenshots/main-screen.png)
