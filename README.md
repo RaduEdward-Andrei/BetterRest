@@ -12,13 +12,6 @@ The app collects user input, converts it into values required by the CoreML mode
 - SwiftUI
 - CoreML
 
-## Learning Context
-
-This project was built as part of the Hacking with Swift – SwiftUI course:
-https://www.hackingwithswift.com/books/ios-swiftui
-
-The implementation was written independently while following the course structure.
-
 ## Screenshot
 
 <p align="center">
@@ -30,3 +23,10 @@ The implementation was written independently while following the course structur
 A short video demonstrating user input and CoreML prediction:
 
 [Watch the demo on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7431709962340331520/)
+
+## Learning Context
+
+This project was built as part of the Hacking with Swift – SwiftUI course:
+https://www.hackingwithswift.com/books/ios-swiftui
+
+The implementation was written independently while following the course structure.
