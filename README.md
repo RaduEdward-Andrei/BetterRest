@@ -21,4 +21,6 @@ The implementation was written independently while following the course structur
 
 ## Screenshot
 
-![BetterRest Screenshot](Screenshots/main-screen.png)
+<p align="center">
+  <img src="Screenshots/main-screen.png" width="350">
+</p>
