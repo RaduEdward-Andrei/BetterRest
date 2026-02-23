@@ -1,0 +1,12 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "--",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.app.tag" : "121.4",
+    "com.apple.createml.version" : "14.4.1",
+    "com.apple.coreml.model.preview.type" : "tabularRegressor",
+    "com.apple.createml.app.version" : "5.0"
+  },
+  "MLModelAuthorKey" : "Radu Edward-Andrei ",
+  "MLModelLicenseKey" : "--"
+}
