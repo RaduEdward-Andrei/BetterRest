@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var wakeUp = defaultWakeTime
     @State private var coffeeAmount = 0
     
-    @State private var model = try? SleepCalculator(
+    private let model = try? SleepCalculator(
         configuration: MLModelConfiguration()
     )
     
