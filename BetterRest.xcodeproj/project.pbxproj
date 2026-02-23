@@ -6,14 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		631DE82D2F4C81FB00A37B41 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 631DE82C2F4C81F500A37B41 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		631DE7F62F4B9F3100A37B41 /* BetterRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		631DE82C2F4C81F500A37B41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		631DE7F82F4B9F3100A37B41 /* BetterRest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BetterRest;
+			sourceTree = "<group>";
+		};
+		631DE82E2F4C8CD300A37B41 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +42,8 @@
 		631DE7ED2F4B9F3100A37B41 = {
 			isa = PBXGroup;
 			children = (
+				631DE82E2F4C8CD300A37B41 /* Screenshots */,
+				631DE82C2F4C81F500A37B41 /* README.md */,
 				631DE7F82F4B9F3100A37B41 /* BetterRest */,
 				631DE7F72F4B9F3100A37B41 /* Products */,
 			);
@@ -62,6 +74,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				631DE7F82F4B9F3100A37B41 /* BetterRest */,
+				631DE82E2F4C8CD300A37B41 /* Screenshots */,
 			);
 			name = BetterRest;
 			packageProductDependencies = (
@@ -109,6 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631DE82D2F4C81FB00A37B41 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
