@@ -22,5 +22,11 @@ The implementation was written independently while following the course structur
 ## Screenshot
 
 <p align="center">
-  <img src="Screenshots/main-screen.png" width="350">
+  <img src="Screenshots/main-screen.png" width="300">
 </p>
+
+## Demo
+
+A short video demonstrating user input and CoreML prediction:
+
+[Watch the demo on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7431709962340331520/)
